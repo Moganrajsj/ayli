@@ -1,7 +1,7 @@
-import { put } from "@vercel/blob";
-import { randomBytes } from "node:crypto";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { randomBytes } from "node:crypto";
+import { uploadToCloudinary } from "@/lib/cloudinary";
 
 export const UPLOADS_DIR = path.join(process.cwd(), "public", "uploads", "products");
 export const UPLOADS_URL_PREFIX = "/uploads/products";
@@ -29,23 +29,29 @@ export function validateImageFile(file: File): string | null {
 }
 
 /**
- * Persists an image to Vercel Blob (or fallback to `public/uploads/products` locally) and returns its URL.
+ * Persists an image and returns its URL.
+ *
+ * Priority order:
+ * 1. Cloudinary (when CLOUDINARY_CLOUD_NAME + API credentials are set) —
+ *    images are stored in the "products" folder and served with auto format/
+ *    quality optimizations. Free plan is sufficient for typical catalogue sizes.
+ * 2. Fallback: local `public/uploads/products` for offline development.
  */
 export async function saveUploadedImage(file: File): Promise<UploadedImage> {
   const ext = MIME_EXT[file.type];
   if (!ext) throw new Error("Unsupported image type.");
 
-  // If Vercel Blob token is configured, save directly to high-speed global CDN
-  if (process.env.BLOB_READ_WRITE_TOKEN) {
-    const filename = `products/${Date.now()}-${randomBytes(6).toString("hex")}.${ext}`;
-    const blob = await put(filename, file, {
-      access: "public",
-      contentType: file.type,
-    });
-    return { url: blob.url, size: file.size };
+  // ── Cloudinary (preferred) ───────────────────────────────────────────────
+  if (
+    process.env.CLOUDINARY_CLOUD_NAME &&
+    process.env.CLOUDINARY_API_KEY &&
+    process.env.CLOUDINARY_API_SECRET
+  ) {
+    const { url } = await uploadToCloudinary(file);
+    return { url, size: file.size };
   }
 
-  // Fallback for offline local development
+  // ── Local fallback for offline dev ──────────────────────────────────────
   await mkdir(UPLOADS_DIR, { recursive: true });
   const filename = `${Date.now()}-${randomBytes(6).toString("hex")}.${ext}`;
   const bytes = Buffer.from(await file.arrayBuffer());

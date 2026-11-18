@@ -29,24 +29,24 @@ const STORY_CATEGORIES = [
   {
     name: "Kurta Sets",
     href: "/category/kurta-sets",
-    image: "/images/cat-kurtas.jpg",
+    image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002277/ayli/images/cat-kurtas.jpg",
     tag: "Trending",
   },
   {
     name: "Co-ord Sets",
     href: "/category/co-ord-sets",
-    image: "/images/hero-coord.jpg",
+    image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002286/ayli/images/hero-coord.jpg",
     tag: "New",
   },
   {
     name: "Dresses",
     href: "/category/dresses",
-    image: "/images/cat-dresses.jpg",
+    image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002276/ayli/images/cat-dresses.jpg",
   },
   {
     name: "Festive Edit",
     href: "/collection/festive-collection",
-    image: "/images/hero-banner.jpg",
+    image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002286/ayli/images/hero-banner.jpg",
     tag: "Special",
   },
   {
@@ -59,7 +59,7 @@ const STORY_CATEGORIES = [
     name: "New In",
     href: "/collection/new-arrivals",
     tag: "Fresh",
-    image: "/images/cat-kurtas.jpg",
+    image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002277/ayli/images/cat-kurtas.jpg",
   },
 ];
 
@@ -174,7 +174,7 @@ export default async function HomePage() {
                 slug: "casual-wear",
                 label: "Everyday",
                 tagline: "Effortless all day",
-                image: "/images/cat-kurtas.jpg",
+                image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002277/ayli/images/cat-kurtas.jpg",
                 accent: "from-rose-900/70",
                 num: "01",
               },
@@ -182,7 +182,7 @@ export default async function HomePage() {
                 slug: "office-wear",
                 label: "Office",
                 tagline: "Polished & poised",
-                image: "/images/hero-coord.jpg",
+                image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002286/ayli/images/hero-coord.jpg",
                 accent: "from-indigo-900/70",
                 num: "02",
               },
@@ -190,7 +190,7 @@ export default async function HomePage() {
                 slug: "festive-collection",
                 label: "Festive",
                 tagline: "Celebration-ready",
-                image: "/images/hero-banner.jpg",
+                image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002286/ayli/images/hero-banner.jpg",
                 accent: "from-amber-900/70",
                 num: "03",
               },
@@ -198,7 +198,7 @@ export default async function HomePage() {
                 slug: "party-wear",
                 label: "Party",
                 tagline: "Made to be noticed",
-                image: "/images/cat-dresses.jpg",
+                image: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002276/ayli/images/cat-dresses.jpg",
                 accent: "from-purple-900/70",
                 num: "04",
               },
@@ -277,7 +277,7 @@ export default async function HomePage() {
               href="/category/kurtis-tops"
               className="group relative col-span-2 row-span-2 overflow-hidden rounded-2xl sm:rounded-3xl bg-ink transition-transform duration-300 ease-out active:scale-[0.985]"
             >
-              <Image src="/images/cat-kurtas.jpg" alt="Kurtis & Tops" fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover object-top animate-fade-in transition-transform duration-700 group-hover:scale-105" priority />
+              <Image src="https://res.cloudinary.com/zynjscbn/image/upload/v1795002277/ayli/images/cat-kurtas.jpg" alt="Kurtis & Tops" fill sizes="(max-width: 640px) 100vw, 50vw" className="object-cover object-top animate-fade-in transition-transform duration-700 group-hover:scale-105" priority />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
               {/* Corner number */}
               <span className="absolute top-5 left-5 font-serif text-[11px] tracking-[0.3em] text-white/40 select-none">01</span>
@@ -299,7 +299,7 @@ export default async function HomePage() {
 
 {/* 02 — Co-ord Sets · 1 col × 1 row */}
             <Link href="/category/co-ord-sets" className="group relative overflow-hidden rounded-2xl bg-ink transition-transform duration-300 ease-out active:scale-[0.985]">
-              <Image src="/images/hero-coord.jpg" alt="Co-ord Sets" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover object-top animate-fade-in transition-transform duration-700 group-hover:scale-105" />
+              <Image src="https://res.cloudinary.com/zynjscbn/image/upload/v1795002286/ayli/images/hero-coord.jpg" alt="Co-ord Sets" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover object-top animate-fade-in transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
               <span className="absolute top-3 left-3 font-serif text-[10px] tracking-[0.3em] text-white/35 select-none">02</span>
               <div className="absolute bottom-0 inset-x-0 p-4">
@@ -313,7 +313,7 @@ export default async function HomePage() {
 
 {/* 03 — Dresses · 1 col × 1 row */}
             <Link href="/category/dresses" className="group relative overflow-hidden rounded-2xl bg-ink transition-transform duration-300 ease-out active:scale-[0.985]">
-              <Image src="/images/cat-dresses.jpg" alt="Dresses" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover object-top animate-fade-in transition-transform duration-700 group-hover:scale-105" />
+              <Image src="https://res.cloudinary.com/zynjscbn/image/upload/v1795002276/ayli/images/cat-dresses.jpg" alt="Dresses" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover object-top animate-fade-in transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
               <span className="absolute top-3 left-3 font-serif text-[10px] tracking-[0.3em] text-white/35 select-none">03</span>
               <div className="absolute bottom-0 inset-x-0 p-4">
@@ -327,7 +327,7 @@ export default async function HomePage() {
 
 {/* 04 — Kurta Sets · 1 col × 1 row */}
             <Link href="/category/kurta-sets" className="group relative overflow-hidden rounded-2xl bg-ink transition-transform duration-300 ease-out active:scale-[0.985]">
-              <Image src="/images/hero-banner.jpg" alt="Kurta Sets" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover object-top animate-fade-in transition-transform duration-700 group-hover:scale-105" />
+              <Image src="https://res.cloudinary.com/zynjscbn/image/upload/v1795002286/ayli/images/hero-banner.jpg" alt="Kurta Sets" fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover object-top animate-fade-in transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
               <span className="absolute top-3 left-3 font-serif text-[10px] tracking-[0.3em] text-white/35 select-none">04</span>
               <div className="absolute bottom-0 inset-x-0 p-4">
@@ -501,7 +501,7 @@ export default async function HomePage() {
                   {/* Photo frame */}
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] border border-hairline/80 bg-rose-mist shadow-float">
                     <Image
-                      src="/images/ayli-edit-craft.jpg"
+                      src="https://res.cloudinary.com/zynjscbn/image/upload/v1795002275/ayli/images/ayli-edit-craft.jpg"
                       alt="The AYLI Edit craftsmanship detail"
                       fill
                       sizes="(max-width: 1024px) 100vw, 40vw"

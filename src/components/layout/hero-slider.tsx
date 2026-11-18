@@ -15,42 +15,42 @@ interface Slide {
 
 const SLIDES: Slide[] = [
   {
-    src: "/images/hero/hero-01.png",
+    src: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002278/ayli/images/hero/hero-01.png",
     alt: "AYLI womenswear campaign banner",
     title: "New season signatures",
     ctaLabel: "Shop now",
     ctaHref: "/collection/new-arrivals",
   },
   {
-    src: "/images/hero/hero-02.png",
+    src: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002279/ayli/images/hero/hero-02.png",
     alt: "AYLI womenswear campaign banner",
     title: "Trending right now",
     ctaLabel: "Shop now",
     ctaHref: "/collection/trending-now",
   },
   {
-    src: "/images/hero/hero-03.png",
+    src: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002281/ayli/images/hero/hero-03.png",
     alt: "AYLI womenswear campaign banner",
     title: "Our most-loved picks",
     ctaLabel: "Shop now",
     ctaHref: "/collection/bestsellers",
   },
   {
-    src: "/images/hero/hero-04.png",
+    src: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002282/ayli/images/hero/hero-04.png",
     alt: "AYLI womenswear campaign banner",
     title: "Quietly made to last",
     ctaLabel: "Shop now",
     ctaHref: "/collection/bestsellers",
   },
   {
-    src: "/images/hero/hero-05.png",
+    src: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002283/ayli/images/hero/hero-05.png",
     alt: "AYLI womenswear campaign banner",
     title: "Everyday, elevated",
     ctaLabel: "Shop now",
     ctaHref: "/collection/trending-now",
   },
   {
-    src: "/images/hero/hero-06.png",
+    src: "https://res.cloudinary.com/zynjscbn/image/upload/v1795002284/ayli/images/hero/hero-06.png",
     alt: "AYLI womenswear campaign banner",
     title: "Details worth noticing",
     ctaLabel: "Shop now",

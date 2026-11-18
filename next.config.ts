@@ -11,10 +11,17 @@ const nextConfig: NextConfig = {
   // this machine's LAN IP so the site works when opened from other devices.
   allowedDevOrigins: ["192.168.1.3"],
   images: {
+    // Use Cloudinary as the image loader so every next/image call is served
+    // through Cloudinary's global CDN with f_auto + q_auto automatically.
+    // The loader reads NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME at runtime.
+    loader: "custom",
+    loaderFile: "./src/lib/cloudinary-loader.ts",
     remotePatterns: [
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
+        // Lock to our cloud — prevents abuse of the optimisation endpoint
+        pathname: "/zynjscbn/**",
       },
       {
         protocol: "https",
