@@ -30,16 +30,10 @@ export async function getVerifiedAdmin(): Promise<VerifiedAdmin | null> {
       };
     }
   } catch (error) {
-    console.error("Admin: Database check failed, checking session JWT:", error);
-    // Fallback: If DB is temporarily hitting connection limits, trust valid ADMIN JWT session
-    if (session.user.role === "ADMIN" && session.user.email) {
-      return {
-        id: session.user.id,
-        email: session.user.email,
-        name: session.user.name ?? null,
-        role: "ADMIN",
-      };
-    }
+    // Fail closed: a signed JWT alone is not sufficient for admin authorization.
+    // If the database cannot confirm the current role, deny the request.
+    console.error("Admin: Database verification failed; denying admin access:", error);
+    return null;
   }
 
   return null;
