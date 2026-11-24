@@ -36,3 +36,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Secure admin account provisioning
+
+Admin accounts are **not** created by the public admin login page. To create the first administrator, run the one-time CLI script from a trusted machine with the AYLI database connection configured:
+
+```bash
+ADMIN_EMAIL="you@example.com" ADMIN_PASSWORD="use-a-unique-password-of-at-least-12-characters" npm run admin:create
+```
+
+Set `DATABASE_URL` in the same shell (or your local environment) before running the command. Do not commit credentials or paste them into source files.
+
+If the email already belongs to a customer account, the script refuses to change its role by default. Only after verifying that you control that account, explicitly set `ADMIN_PROMOTE_EXISTING=true` and rerun; this promotes the account and sets the supplied password.
+
+The script refuses to overwrite an account that is already an administrator. Run it only from a trusted environment and remove the temporary environment variables after use.
