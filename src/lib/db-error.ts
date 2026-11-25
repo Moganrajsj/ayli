@@ -9,13 +9,16 @@
 /**
  * Prisma / MySQL error codes that indicate a *transient* connectivity problem
  * rather than a bug in the query. Reads hitting these are safe to retry.
+ *
+ * MySQL 1226 (max_connections_per_hour) is deliberately excluded: it is an
+ * account quota, not a short-lived connection failure. Immediate retries
+ * cannot clear the quota and may amplify database and function load.
  */
 export const RETRYABLE_DB_CODES = [
   "P1001", // Can't reach the database server
   "P1002", // Timed out reaching the database server
   "P1017", // Server has closed the connection
   "P2024", // Timed out fetching a connection from the pool
-  "1226", // MySQL: exceeded max_connections_per_hour (Hostinger cap)
   "1040", // MySQL: too many connections
 ] as const;
 
