@@ -201,18 +201,19 @@ export async function getTrendingSearch(): Promise<SearchSuggestions> {
     }),
     prisma.category.findMany({
       where: { isActive: true },
+      take: 6,
       orderBy: [{ sortOrder: "asc" }, { name: "asc" }],
       select: { slug: true, name: true },
     }),
     prisma.collection.findMany({
       where: { isActive: true },
+      take: 8,
       orderBy: [{ sortOrder: "asc" }, { name: "asc" }],
       select: { slug: true, name: true },
     }),
   ]);
 
-  const firstCategories = categories.slice(0, 6);
-  return { products, categories: firstCategories, collections };
+  return { products, categories, collections };
 }
 
 // ─── Cached search listing ───────────────────────────────────────────────────
